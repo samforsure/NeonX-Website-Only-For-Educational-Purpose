@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "public": true,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "http://omega.vexanode.cloud:2001/api/$1" },
     { "source": "/socket.io/(.*)", "destination": "http://omega.vexanode.cloud:2001/socket.io/$1" }
