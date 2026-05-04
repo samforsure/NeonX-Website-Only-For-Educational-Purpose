@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>NeonX Nexus | Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ====== AUTH PAGE - MOBILE FIRST ====== */
+        .auth-page-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: url('https://media.discordapp.net/attachments/1500468639613190369/1500656967687868486/nigger.png?ex=69f93b35&is=69f7e9b5&hm=cdfcef834662e78e6a5d89bb948aa001366c1dab1c2891dc6f43e1ad6c00dde6&=&format=webp&quality=lossless&width=1173&height=586');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .auth-page-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                160deg,
+                rgba(0, 0, 0, 0.88) 0%,
+                rgba(0, 5, 20, 0.76) 50%,
+                rgba(0, 0, 0, 0.92) 100%
+            );
+        }
+
+        .auth-container {
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(0, 5, 12, 0.72);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(0, 170, 255, 0.2);
+            border-radius: 24px;
+            padding: 2.8rem 2.2rem;
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(255, 255, 255, 0.03),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            animation: card-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes card-enter {
+            from { opacity: 0; transform: translateY(30px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* ---- LOGO AREA ---- */
+        .auth-logo-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-logo-ring {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #0055cc, #00aaff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 30px rgba(0, 170, 255, 0.35);
+            animation: logo-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes logo-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 32, 32, 0.3); }
+            50%       { box-shadow: 0 0 40px rgba(255, 32, 32, 0.6); }
+        }
+
+        .auth-title {
+            font-family: 'Game Of Squids', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-align: center;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+
+        .auth-title .accent-text {
+            color: #00aaff;
+            text-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+        }
+
+        .auth-sub {
+            font-family: 'Outfit', sans-serif;
+            color: #7ca0c8;
+            text-align: center;
+            font-size: 0.68rem;
+            letter-spacing: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* ---- DIVIDER ---- */
+        .auth-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 170, 255, 0.3), transparent);
+            margin: 1.5rem 0;
+        }
+
+        /* ---- FORM ELEMENTS ---- */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #00aaff;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .form-label i {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(0, 170, 255, 0.18);
+            padding: 0.95rem 1.1rem;
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: rgba(176, 152, 152, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .form-input:focus {
+            border-color: rgba(255, 32, 32, 0.5);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 0 20px rgba(255, 32, 32, 0.12);
+        }
+
+        /* Password match indicator */
+        .form-input.match-ok  { border-color: rgba(0, 220, 100, 0.5) !important; }
+        .form-input.match-err { border-color: rgba(255, 50, 50, 0.6) !important; }
+
+        /* ---- BUTTON ---- */
+        .btn-auth {
+            width: 100%;
+            padding: 1.1rem;
+            border-radius: 14px;
+            border: none;
+            font-family: 'Game Of Squids', sans-serif;
+            font-weight: 400;
+            font-size: 1.05rem;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: linear-gradient(135deg, #0055cc 0%, #00aaff 100%);
+            color: #fff;
+            box-shadow: 0 4px 25px rgba(0, 170, 255, 0.35);
+            position: relative;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .btn-auth::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-auth:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(255, 32, 32, 0.55);
+        }
+
+        .btn-auth:hover::before { opacity: 1; }
+        .btn-auth:active { transform: scale(0.98); }
+
+        /* ---- FOOTER ---- */
+        .auth-footer {
+            margin-top: 1.8rem;
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            color: #7ca0c8;
+        }
+
+        .auth-footer a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .auth-footer a:hover { color: #55ccff; }
+
+        /* ---- MOBILE TWEAKS ---- */
+        @media (max-width: 480px) {
+            .auth-container {
+                align-items: flex-start;
+                padding-top: 1.5rem;
+                padding-bottom: 2rem;
+            }
+
+            .auth-card {
+                padding: 2rem 1.3rem;
+                border-radius: 20px;
+            }
+
+            .auth-title {
+                font-size: 1.7rem;
+                letter-spacing: 2px;
+            }
+
+            .form-input {
+                font-size: 16px; /* prevents iOS zoom */
+            }
+
+            .btn-auth {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background -->
+    <div class="auth-page-bg"></div>
+    <div class="grid-overlay" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></div>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Logo & Title -->
+            <div class="auth-logo-area">
+                <div class="auth-logo-ring">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h1 class="auth-title"><span class="accent-text">Register</span> Access</h1>
+                <p class="auth-sub">NeonX Botter System</p>
+            </div>
+
+            <div class="auth-divider"></div>
+
+            <!-- Register Form -->
+            <form id="registerForm" autocomplete="on">
+                <div class="form-group">
+                    <label class="form-label" for="email">
+                        <i class="fa-solid fa-envelope"></i> Gmail Address
+                    </label>
+                    <input type="email" id="email" class="form-input" placeholder="name@gmail.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">
+                        <i class="fa-solid fa-lock"></i> Choose Password
+                    </label>
+                    <input type="password" id="password" class="form-input" placeholder="••••••••" required autocomplete="new-password">
+                </div>
+
+                <div class="form-group" id="referrer-group" style="display: none;">
+                    <label class="form-label">
+                        <i class="fa-solid fa-user-tag"></i> Invited By
+                    </label>
+                    <input type="text" id="referrer" class="form-input" readonly>
+                </div>
+
+                <button type="submit" class="btn-auth" id="registerBtn">
+                    Register Access
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Already registered? <a href="login.html">Login Terminal</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Password match visual feedback
+        const confirmInput = document.getElementById('confirm');
+        const passwordInput = document.getElementById('password');
+
+        confirmInput.addEventListener('input', () => {
+            if (confirmInput.value.length === 0) {
+                confirmInput.classList.remove('match-ok', 'match-err');
+                return;
+            }
+            if (confirmInput.value === passwordInput.value) {
+                confirmInput.classList.add('match-ok');
+                confirmInput.classList.remove('match-err');
+            } else {
+                confirmInput.classList.add('match-err');
+                confirmInput.classList.remove('match-ok');
+            }
+        });
+
+        // Referrer Handling
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('ref');
+        if (ref) {
+            document.getElementById('referrer-group').style.display = 'block';
+            document.getElementById('referrer').value = ref;
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('registerBtn');
+            const email = document.getElementById('email').value;
+            const password = passwordInput.value;
+            const confirm = confirmInput.value;
+            const referrer = document.getElementById('referrer').value;
+
+            if (password !== confirm) return alert('Passwords do not match!');
+
+            btn.textContent = 'Registering...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password, referrer })
+                });
+
+                const data = await res.json();
+                if (data.success) {
+                    alert('Registration Successful! Redirecting to login...');
+                    window.location.href = 'login.html';
+                } else {
+                    alert(data.msg || 'Registration Failed');
+                }
+            } catch (err) {
+                alert('Connection error. Try again.');
+            } finally {
+                btn.textContent = 'Register Access';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
